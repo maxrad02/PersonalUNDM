@@ -1,0 +1,9 @@
+- name: Zalyn
+  image: ../images/kids/zalyn.jpg
+  story: Zalyn was born with Trisomy 18 (Edward's Syndrome). Only 5 out of 100 children with Edward's Syndrome make it to birth, and only 1 of those 5 children will make it to their first birthday. Zalyn is now five and a half years old! He loves paw patrol, swimming, and playing outside. 
+- name: Marlys
+  image: ../images/kids/marlys.jpg
+  story: Marlys suffers from Zygomycosis, BPD, and pulmonary hypertension. Despite being born at 25 weeks, and being given a 20% chance to live, Marlys is now three years old! Her team at Children's has become like family!
+- name: Milly
+  image: ../images/kids/milly.jpg
+  story: Milly has dealt with pulmonary hypoplasia and several other conditions in her life. Despite hearing loss brought on by complications with her lungs, Milly has a beautiful singing voice and was named the National Miracle Child in 2017! 

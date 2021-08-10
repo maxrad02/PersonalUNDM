@@ -1,0 +1,30 @@
+- name: Collins Agronomics
+  image: "../images/sponsors/collinsLogo.png"
+  link: "https://www.linkedin.com/in/dave-collins-ba068222/"
+- name: Love's
+  image: "../images/sponsors/lovesLogo.png"
+  link: "https://www.loves.com/"
+- name: Union Bank & Trust
+  image: "../images/sponsors/ubtLogoNew.png"
+  link: "http://www.ubt.com/"
+- name: Taco Bell
+  image: "../images/sponsors/tbellLogo.png"
+  link: "http://www.tacobell.com/"
+- name: Bland & Associates (Bland Cares)
+  image: "../images/sponsors/blandLogo.png"
+  link: "https://blandcpa.com"
+- name: Lincoln Financial Group
+  image: "../images/sponsors/lfgLogo.png"
+  link: "https://www.lfg.com/public/individual"
+- name: Lincoln Industries
+  image: "../images/sponsors/lincolnIndustriesLogo.png"
+  link: "https://www.lincolnindustries.com"
+- name: Runza
+  image: "../images/sponsors/runzaLogo.jpg"
+  link: "https://www.runza.com/"
+- name: Locher Pavelka Dostal Braddy and Hammes, LLC
+  image: "../images/sponsors/llcLogo.png"
+  link: "http://www.lpdbhlaw.com"
+- name: Latitude Apartments
+  image: "../images/sponsors/latitudeLogo.png"
+  link: "https://www.latitudeapartments.com/"

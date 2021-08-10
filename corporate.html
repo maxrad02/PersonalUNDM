@@ -1,0 +1,96 @@
+---
+title: 
+description: 
+---
+
+<script type="text/javascript">
+  $('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function() {
+    var $target = $(this).parent().next()
+    $target.slideToggle()//data('collapse') ? $target.collapse('toggle') : $target.collapse()    
+  });
+</script>
+
+<div class="container content">
+
+  <div class="row">
+    <h1 class="mx-auto text-center">Want to Become a Sponsor?</h1>
+  </div>
+
+  <div class="row">
+    <p class="mx-auto text-center">Contact our team:</p>
+  </div>
+
+  <div class="row">
+    <a class="mx-auto text-center" href="mailto:corporate.sponsorship@unldancemarathon.com">corporate.sponsorship@unldancemarathon.com</a>
+  </div>
+
+  <br>
+
+  <div class="row mt-5" style="border-bottom: 2px solid #D3D3D3;">
+    <h2>Ways to Sponsor UNDM</h2>
+  </div>
+
+  <section class="sponsor-grid pt-0 mx-5 mt-3">
+    <div class="card-deck">
+        {% tablerow method in site.data.sponsor_methods cols:3 %}
+        <div class="fade-item card">
+            <div class="my-auto" style="position: relative;">
+              <h3>{{method.method}}</h3>
+              <div class="vertical-center-text">
+                <p>{{method.description}}</p>
+              </div>
+            </div>
+        </div>
+        {% endtablerow %}
+    </div>
+  </section>
+
+  <div class="row" style="border-bottom: 2px solid #D3D3D3;">
+    <h2>Sponsorship Levels</h2>
+  </div>
+
+  <section class="sponsor-levels pt-0 mx-5 mt-3">
+    {% tablerow level in site.data.sponsor_levels %}
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="fade-item card">
+          <div class="my-auto card-inner">
+            <div>
+              <button class="btn btn-link" type="button" class="btn toggle" data-toggle="collapse-next">
+                <h3>{{level.level}}</h3>
+                <h3>{{level.range}}</h3>
+              </button>
+            </div>
+            <div class="collapse">
+              <p class="mx-auto">{{level.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endtablerow %}
+  </section>
+
+  <div class="row" style="border-bottom: 2px solid #D3D3D3;">
+    <h2><br>HuskerThon 2020 Sponsors</h2>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col spacing">
+      <p class="text-center">On behalf of University of Nebraska Dance Marathon and Children’s Miracle Network
+        Hospitals, we would like to express our appreciation for your consideration of our cause. We are looking
+        forward to working with you and your business in the future!</h2>
+    </div>
+  </div>
+
+  <div class="sponsor-grid mt-5">
+    <!--Populates grid of sponsors with names from sponsors.yml file in site data.-->
+    <table>
+      {% tablerow sponsor in site.data.sponsors cols:4 %}
+      <a href={{sponsor.link}}>
+        <img class="fade-item my-5" src={{sponsor.image}}/>
+      </a>
+      {% endtablerow %}
+    </table>
+  </div>
+</div>

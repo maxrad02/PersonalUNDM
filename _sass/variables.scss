@@ -1,0 +1,20 @@
+//$brand-color: #d00000;
+$brand-color: rgb(198, 31, 74);
+$secondary-brand-color: #d00000;
+$middle-gradient-color: mix($brand-color, $secondary-brand-color, 95%);
+
+// Breakpoints
+$tablet: "(min-width: 450px)";
+$mid-point: "(min-width: 620px)";
+$desktop: "(min-width: 768px)";
+
+// BootStrap
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round&display=swap);
+// Font Variables
+$varela: 'Varela Round', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+$font-family-base: $open-sans;
+$headings-font-family: $varela;
+
+$carousel-control-color: black;

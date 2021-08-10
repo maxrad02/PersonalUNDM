@@ -1,0 +1,15 @@
+- level: For The Kids
+  range: $500-$999
+  description: -Attendant bag gift prize <br>-Logo on website <br>-Company name on event t-shirt <br>-Event VIP pass 
+- level: Impact
+  range: $1000-$1999
+  description: -Newsletter advertisement <br>-Advertisement in registration packet <br>-Logo on main event shirt (size of logo commensurate with donation level)
+- level: Big Red Believer
+  range: $2000-$3999
+  description: -Tickets to miracle talent show <br>-Newsletter spotlight <br>-Company booth and banner at Huskerthon <br>-Twitter post
+- level: Husker Hero
+  range: $4000-$5999
+  description: -Check presentation at Huskerthon <br>-Instagram post <br>-Gift from miracle child
+- level: Lasting Legacy
+  range: $6000+
+  description: -Facebook post <br>-Speech and commercial presentation at Huskerthon <br>-Company banner headlining main stage

@@ -1,0 +1,125 @@
+---
+title: UNDM
+description: University of Nebraska-Lincoln Dance Marathon. We dance for those who can't.
+---
+<!-- NOTE: CSS for this page is in landing-page.scss -->
+<!-- AS YOU DELETE CODE DELETE THE CSS THE CORRESPONDS -->
+
+<div class="video-container">
+	<video autoplay loop muted>
+			<source src="videos/dm.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+	</video>
+	<div class="overlay fade-item">
+		<h1>we dance to help those who can't</h1>
+		<a class="btn btn-default" href="https://events.dancemarathon.com/index.cfm?fuseaction=donorDrive.event&eventID=4589"
+			role="button" target="_blank">Get Involved</a>
+	</div>
+</div>
+
+<div class="content">
+	<section class="what-is-dm">
+		<h1>What is Dance Marathon?</h1>
+		<p>University of Nebraska-Lincoln Dance Marathon is one of the largest student registered organizations on campus.
+			Every year, we recruit students from all over campus to come together and fundraise for the Children’s Hospital in Omaha.
+			We host small events on campus and within the Lincoln community to integrate all walks of life into our mission
+			 of being one generation fighting for the next. The pinnacle of our year is a 13.1 hour “Dance Marathon”
+			 where UNL students and kids who have been treated at Children’s Hospital come together to celebrate the money we
+			 have raised and dance the night away. We integrate dancing, live acts such as a children’s talent show, crafts and
+			 activities for all ages, and even shaving heads for the kids to give families and children affected to have a day
+			 without the worries associated with their numerous stays in the hospital.</p>
+	</section>
+	
+	<section class="bottom-cta">
+		<h1 id="demo"></h1>
+		<h1>Countdown to HuskerThon 2021</h1>
+		<h1></h1>
+		<div class="container">
+		<div class="card-deck">
+			  <div class="card">
+				<p class="card-text">DAYS</p>
+				<p class="card-text2" id="days"></p>
+			  </div>
+			  <div class="card">
+				<p class="card-text">HOURS</p>
+				<p class="card-text2" id="hours"></p>
+			  </div>
+			  <div class="card">
+				<p class="card-text">MINUTES</p>
+				<p class="card-text2" id="minutes"></p>
+			  </div>
+				<div class="card">
+				  <p class="card-text">SECONDS</p>
+				  <p class="card-text2" id="seconds"></p>
+				</div>
+		</div>	
+	   </div>
+		<div>
+			
+
+			<script>
+				// Set the date we're counting down to
+				var countDownDate = new Date("February 26, 2022 10:00:00").getTime();
+
+				// Update the count down every 1 second
+				var x = setInterval(function() {
+
+				// Get today's date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance = countDownDate - now;
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				// Display the result in the element with id="demo"
+
+				document.getElementById("days").innerHTML = days;
+				document.getElementById("hours").innerHTML = hours;
+				document.getElementById("minutes").innerHTML = minutes;
+				document.getElementById("seconds").innerHTML = seconds;
+
+				// If the count down is finished, write some text
+				if (distance < 0 && distance > (-1000 * 60 * 60 * 12)) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "Time to dance!";
+				}
+				else if (distance < (-1000 * 60 * 60 * 12)) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "See you next year!";
+				}
+				}, 1000);
+			</script>
+		</div>
+	</section>
+
+	<section class="what-is-dm">
+		<h1>Why We Dance</h1>
+		<p>Children's Miracle Network Dance Marathon was founded by students in 1991 in the memory of Ryan White. Since its
+			inception, it has grown to over 100 universities and colleges across the country. All entirely student-run, all
+			donating 100% of the funds they raise directly to their local children's hospital, Dance Marathons have become a
+			tradition on campus and in the community. Year in and year out- students throw the biggest party of the year for
+			the children at their local hospital. They stay on their feet for 12, 24, or even 48 hours in honor of children
+			who have been through so much. They dance for those who can't. They do it For the Kids!</p>
+	</section>
+
+	<section class="posts">
+		<h1>Recent Posts</h1>
+		<div class="post-container fade-item">
+		{% for post in site.posts limit:3%}
+			<div class="post">
+				<a href="{{ post.url }}">
+					<h3>{{ post.title }}</h3>
+					<p>{{ post.excerpt | strip_html | strip_newlines | truncate: 100 }}</p>
+				</a>
+			</div>
+		{% endfor %}
+		</div>
+	</section>
+
+
+</div>

@@ -1,0 +1,20 @@
+- links:
+  - name: Blog
+    link: /blog/
+  - name: About
+    link: /about/
+  - name: Contact
+    link: /contact/
+- links:
+  - name: Facebook
+    link: https://www.facebook.com/unldancemarathon/
+    new_window: true
+    social_icon: Facebook
+  - name: Twitter
+    link: https://twitter.com/UNDM_
+    social_icon: Twitter
+    new_window: true
+  - name: Instagram
+    link: https://www.instagram.com/undm_/
+    social_icon: Instagram
+    new_window: true

@@ -1,0 +1,168 @@
+.families-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin: 4px;
+  }
+  a {
+    font-size: max(1vw, 13px);
+  }
+  button {
+    background-color: #FFBC40;
+    margin-top: 2em;
+  }
+}
+.families {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.family-cards {
+  .family-card {
+    width: auto;
+    min-height: 10vw;
+    max-width: 1250px;
+    padding: 10px;
+    margin-bottom: 5vh;
+    background-color: #d3d3d3;
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    .family-card-image {
+      height: 10vw;
+      width: 10vw;
+      max-height: 125px;
+      max-width: 125px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      border: 6px solid #db3333;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    h1 {
+      margin: 5px;
+    }
+
+    h4 {
+      margin: 5px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      .family-card-image {
+        height: 50px;
+        width: 50px;
+        right: 10px;
+        position: absolute;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #db3333;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+      }
+      h1 {
+        margin: 10px;
+      }
+      h4 {
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.family-grid {
+  .card-deck {
+    .card {
+      min-width: calc(25% - 30px);
+      margin: 15px;
+      padding: 10px;
+      background-color: #d3d3d3;
+      border-radius: 5px; /* 5px rounded corners */
+      box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
+      transition: all .5s;
+
+      .vertical-center-text {
+        height: 0;
+        opacity: 0;
+        display: flex;
+        margin: auto;
+        align-items:center;
+        justify-content:center;
+        transition: height .7s, opacity .5s;
+      }
+    }
+    .card:hover {
+      min-width: calc(25% - 30px);
+      margin: 15px;
+      padding: 10px;
+      background-color: #dcdcdc;
+      border-color: #db3333;
+      border-radius: 5px; /* 5px rounded corners */
+      box-shadow: 0 4px 8px 4px rgba(0,0,0,0.2);
+
+      .vertical-center-text {
+        height: 150px; /* TODO This could be fixed to scale to the height needed (instead of a constant) */
+        opacity: 1;
+        display: flex;
+        margin: auto;
+        align-items:center;
+        justify-content:center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .family-grid {
+    .card-deck {
+      .card {
+        min-width: calc(25% - 30px);
+        margin: 15px;
+        padding: 10px;
+        background-color: #d3d3d3;
+        border-radius: 5px; /* 5px rounded corners */
+        box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
+
+        .vertical-center-text {
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+    .card-deck:hover {
+      .card {
+        min-width: calc(25% - 30px);
+        margin: 15px;
+        padding: 10px;
+        background-color: #d3d3d3;
+        border-radius: 5px; /* 5px rounded corners */
+        box-shadow: 0 4px 8px 0px rgba(0,0,0,0.2);
+
+        .vertical-center-text {
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

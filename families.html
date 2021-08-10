@@ -1,0 +1,98 @@
+---
+title: 
+description: 
+---
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+    function showImages(el) {
+        var windowHeight = jQuery(window).height();
+        $(el).each(function () {
+            var thisPos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (topOfWindow + windowHeight - 200 > thisPos) {
+                $(this).addClass("fadeIn");
+            }
+        });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(document).ready(function () {
+        showImages('.star');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).scroll(function () {
+        showImages('.star');
+    });
+</script>
+<div class="content">
+    <div class="families-head">
+        <h1>Meet Our Miracle Kids</h1>
+        <p>Have a child that wants to become a part of UNDM? 
+            <div>
+                <p>
+                    Contact our Family Relations Directors: 
+                    <a href="mailto:family.relations@unldancemarathon.com">family.relations@unldancemarathon.com</a>
+                </p>
+            </div>
+        </p>
+        {% if site.data.forms.kiddo-letter %}
+        {% include forms/kiddo-letter.html%}
+        {% endif %}
+    </div>
+    <section class="families">
+        <div id="familyCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for family in site.data.families %}
+                <div class="item" style="height:50vh">
+                    <img src="{{ family.image }}" alt="Dance Marathon family"
+                        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                {% endfor %}
+            </div>
+            <script>
+                $('#familyCarousel .item').first().addClass('active');
+            </script>
+        </div>
+    </section>
+    <section class="family-cards row">
+        <div class="container">
+            {% for story in site.data.stories %}
+            <div class="fade-item row family-card mx-auto">
+                <div class="row mb-0 px-2">
+                    <div class="col-md-auto my-auto">
+                        <div class="family-card-image">
+                            <img src="{{ story.image }}"/>
+                        </div>
+                    </div>
+                    <div class="col my-auto">
+                        <div class="row my-0">
+                            <h1>{{ story.name }}</h1>
+                        </div>
+                        <div class="row mb-0">
+                            <h4>
+                                {{ story.story }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="family-grid mt-3">
+        {% tablerow kid in site.data.kids cols:4 %}
+           <div class="card">
+               <width="100">
+                <div class="card-header">
+                  <h2>{{kid.name}}</h2>
+                 <div class="vertical-center-text">
+                   <p>{{kid.fact}}</p>
+                 </div>
+               </div>
+           </div>
+           {% endtablerow %}
+        </div>
+    </section>
+</div>

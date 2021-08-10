@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% seo %}
+		{% feed_meta %}
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="icon" type="image/png" href="../images/logos/smallLogo.png">
+
+		{% if jekyll.environment == 'production' %}
+		{% include analytics.html %}
+		{% endif %}
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script>
+			function showImages(el) {
+				var windowHeight = jQuery( window ).height();
+				$(el).each(function(){
+					var thisPos = $(this).offset().top;
+					var topOfWindow = $(window).scrollTop();
+					if (topOfWindow + windowHeight - 200 > thisPos ) {
+						$(this).addClass("fadeIn");
+					}
+				});
+			}
+			// if the image in the window of browser when the page is loaded, show that image
+			$(document).ready(function(){
+					showImages('.fade-item');
+			});
+			// if the image in the window of browser when scrolling the page, show that image
+			$(window).scroll(function() {
+					showImages('.fade-item');
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="nav-container">
+					<a href="{{ site.baseurl }}/" style="position: relative; z-index: 1;">
+						<img alt="UNDM Logo" src="../images/logos/flame_one_line.png" width="25%" height="auto" style="max-width: 500px;">
+					</a>
+					{% include navigation.html %}
+				</div>
+			</div>
+		</header>
+		{{ content }}
+		
+		<footer>
+			<div class="container">
+				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
+				<div class="footer-columns">
+					{% for column in site.data.footer %}
+					<ul class="footer-links">
+						{% for link in column.links %}
+							<li><a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon }}-icon"{% endif %}>
+								{% if link.social_icon %}
+									{% include social-icon.html icon=link.social_icon %}
+								{% endif %}
+								{{ link.name }}</a></li>
+						{% endfor %}
+					</ul>
+					{% endfor %}
+				</div>
+				<p class="copyright">&copy; University of Nebraska-Lincoln Dance Marathon</a></p>
+			</div>
+		</footer>
+		<script>
+			document.getElementById("open-nav").onclick = function () {
+				document.body.classList.toggle("nav-open");
+				return false;
+			};
+		</script>
+	<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+				});
+			}
+			});
+		}
+	</script>
+	</body>
+</html>
